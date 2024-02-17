@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversa - Learn Languages with AI</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: white;
+        }
+        .welcome-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .welcome-screen h1 {
+            font-size: 4em;
+            font-weight: 700;
+            animation: pulse 2s infinite alternate;
+        }
+        .content {
+            padding: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .content.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 2em;
+            margin-top: 20px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            animation: pulseButton 2s infinite alternate;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes pulseButton {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .parallax {
+            background-image: url('https://storage.yandexcloud.net/incrussia-prod/wp-content/uploads/2023/03/Frame-11.gif');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .plan-section {
+            background-color: #28044A;
+            color: #7CCC59;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .plan {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .plan-column {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #7CCC59;
+            border-radius: 10px;
+            margin: 0 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-column h3 {
+            font-size: 1.5em;
+        }
+
+        .plan-column p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .premium {
+            background-color: #7CCC59;
+            color: #28044A;
+            border-color: #7CCC59;
+        }
+
+        .upgrade-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #28044A;
+            color: #7CCC59;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            animation: pulseButton 2s infinite alternate;
+        }
+
+        .upgrade-button:hover {
+            background-color: #180125;
+        }
+
+        .latest-updates-section {
+            background-color: #000000;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .latest-updates {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .update-item {
+            flex: 0 0 calc(25% - 20px);
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .update-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .update-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .update-title {
+            padding: 10px;
+            background-color: #28044A;
+            color: #7CCC59;
+            font-size: 1.2em;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-screen">
+        <h1>Conversa</h1>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </div>
+    <div class="content">
+        <h2>About Conversa</h2>
+        <button class="upgrade-button" onclick="redirectToWebsite()">Try Conversa</button>
+
+<script>
+  function redirectToWebsite() {
+    window.location.href = "https://arcaii.github.io/Conversa/"; // Replace "https://example.com" with the URL you want to redirect to
+  }
+</script>
+
+        <p>Welcome to Conversa, your AI language learning companion! With Conversa, you can learn a variety of languages, including French, Spanish, Hindi, and many more. Our advanced AI technology makes language learning fun, interactive, and efficient.</p>
+    </div>
+    <div class="content">
+        <h2>How Conversa Works</h2>
+        <p>Conversa utilizes state-of-the-art natural language processing algorithms to provide personalized language learning experiences. Whether you're a beginner or an advanced learner, Conversa adapts to your skill level and learning pace.</p>
+    </div>
+    <div class="content">
+        <h2>Why Choose Conversa?</h2>
+        <p>1. Interactive Lessons: Engage in conversations with our AI tutors to practice speaking, listening, and comprehension skills.</p>
+        <p>2. Personalized Feedback: Receive instant feedback and recommendations tailored to your learning progress.</p>
+        <p>3. Multi-Language Support: Learn multiple languages simultaneously, expanding your linguistic repertoire.</p>
+        <p>4. Convenient Access: Access Conversa anytime, anywhere, from your computer or mobile device.</p>
+    </div>
+    <div class="parallax">
+        <h2>Revolutionize Your Language Learning Experience</h2>
+        <p>Experience the future of language learning with Conversa. Join us today!</p>
+        <button>Sign Up Now</button>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.content');
+            elements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('fade-in');
+                }
+            });
+        });
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    </script>
+
+    <div class="plan-section">
+        <h2>Choose Your Plan</h2>
+        <div class="plan">
+            <div class="plan-column">
+                <h3>Free Plan</h3>
+                <p>Access to basic language lessons</p>
+            </div>
+            <div class="plan-column premium">
+                <h3>Premium Plan</h3>
+                <p>$10.99/month</p>
+                <button class="upgrade-button">Upgrade to Plus</button>
+                <p>Access to advanced language lessons</p>
+                <p>Learn more languages</p>
+                <p>Get access to GPT-5 Chatbot</p>
+                <p>Chat in any language</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="latest-updates-section">
+        <h2>Latest Updates</h2>
+        <div class="latest-updates">
+            <div class="update-item">
+                <img src="Qstar logo (2).png" alt="Update 1" class="update-image">
+                <div class="update-title">Qstar coming in action </div>
+            </div>
+            <div class="update-item">
+                <img src="https://images.openai.com/blob/28bcbcb2-563a-432b-bb30-d74f66a087fe/young-tiger.jpg?trim=0,0,0,0&width=800" alt="Update 2" class="update-image">
+                <div class="update-title">Sora reasearch </div>
+            </div>
+            <div class="update-item">
+                <img src="unnamed (2).png" alt="Update 3" class="update-image">
+                <div class="update-title">Conversa Plus</div>
+            </div>
+            <div class="update-item">
+                <img src="https://images.openai.com/blob/5080983d-9c4d-4479-8e11-e88d309079eb/disrupting-malicious-uses-of-ai-by-state-affiliated-threat-actors.jpg?trim=0,0,0,0&width=1400" alt="Update 4" class="update-image">
+                <div class="update-title">GPT-5 reasearch </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
